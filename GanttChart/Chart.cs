@@ -11,14 +11,6 @@ using System.Drawing.Printing;
 
 namespace Braincase.GanttChart
 {
-    static class GDIExtention
-    {
-        public static void DrawRectangle(this Graphics graphics, Pen pen, RectangleF rectangle)
-        {
-            graphics.DrawRectangle(pen, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
-        }
-    }
-
     /// <summary>
     /// Gantt Chart control
     /// </summary>
@@ -1491,6 +1483,14 @@ namespace Braincase.GanttChart
         Task _mMouseEntered = null; // flag whether the mouse has entered a Task rectangle or not
         Dictionary<Task, string> _mTaskToolTip = new Dictionary<Task, string>();
         #endregion Private Helper Variables
+    }
+    
+    static class GDIExtention
+    {
+        public static void DrawRectangle(this Graphics graphics, Pen pen, RectangleF rectangle)
+        {
+            graphics.DrawRectangle(pen, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+        }
     }
 
     #region Chart Formatting
